@@ -1,0 +1,183 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+import { getCollection } from "astro:content";
+import createSlug from "../lib/createSlug";
+import HorizontalCardProject from "@components/HorizontalCardProject.astro";
+
+import assemblyIcon from "../assets/logos/assembly.svg";
+import rabbitMQIcon from "../assets/logos/rabbitmq.svg";
+import signalRIcon from "../assets/logos/signalr.svg";
+import grafanaIcon from "../assets/logos/grafana.svg";
+import jenkinsIcon from "../assets/logos/jenkins.svg";
+import csharpIcon from "../assets/logos/c-sharp.svg";
+import dockerIcon from "../assets/logos/docker.svg";
+import xstateIcon from "../assets/logos/xstate.svg";
+import reactIcon from "../assets/logos/react.svg";
+import unityIcon from "../assets/logos/unity.svg";
+import sqlIcon from "../assets/logos/sql.svg";
+import tsIcon from "../assets/logos/ts.svg";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const last_posts = posts.slice(0, 3);
+---
+
+<BaseLayout sideBarActiveItemID="home">
+  <div class="pb-12 mt-5">
+    <div class="text-xl py-1">Hey there 👋</div>
+    <div class="text-5xl font-bold">I'm Dimitar Todev</div>
+    <div class="text-3xl py-3 font-bold">Software Engineer</div>
+    <div class="py-2">
+      <text class="text-lg">
+        Fighting entropy one idea at a time. Interested in the human condition.
+      </text>
+    </div>
+    <div class="mt-8">
+      <a class="btn" href="https://twitter.com/dmtodev" target="_blank">
+        Let's connect!</a
+      >
+    </div>
+  </div>
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-2">Projects at work 🖥️</div>
+  </div>
+
+  <HorizontalCardProject
+    title="Skustack Lens"
+    img="/lens-thumbnail.webp"
+    desc="A real-time warehouse visualization app that empowers businesses to monitor and optimize their operations with powerful, intuitive tracking and insights."
+    url="https://youtu.be/HSeX3XjRyr0"
+    tags={["Web", "App", "API"]}
+    techStack={[
+      { src: csharpIcon, alt: "C#" },
+      { src: signalRIcon, alt: "SignalR" },
+      { src: rabbitMQIcon, alt: "Rabbit MQ" },
+      { src: tsIcon, alt: "TypeScript" },
+      { src: reactIcon, alt: "React" },
+      { src: xstateIcon, alt: "Xstate" },
+      { src: sqlIcon, alt: "SQL" },
+      { src: dockerIcon, alt: "Docker" },
+      { src: jenkinsIcon, alt: "Jenkins" },
+    ]}
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCardProject
+    title="Skublox"
+    img="/skublox-thumbnail.webp"
+    desc="A system that greatly optimizes the shipping and sorting process that many companies struggle with."
+    url="https://youtu.be/LHsaIaACVcg?t=2"
+    tags={["Web", "App", "API", "Desktop"]}
+    techStack={[
+      { src: csharpIcon, alt: "C#" },
+      { src: signalRIcon, alt: "SignalR" },
+      { src: rabbitMQIcon, alt: "Rabbit MQ" },
+      { src: tsIcon, alt: "TypeScript" },
+      { src: reactIcon, alt: "React" },
+      { src: xstateIcon, alt: "Xstate" },
+      { src: sqlIcon, alt: "SQL" },
+      { src: dockerIcon, alt: "Docker" },
+      { src: jenkinsIcon, alt: "Jenkins" },
+    ]}
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCardProject
+    title="4D Scale"
+    img="/4d-scale-thumbnail.webp"
+    desc="A multidimensional scaling system that measures weight and dimensions in real-time and communicates with other products in the Sellercloud ecosystem."
+    url="https://youtu.be/NI2DZhsVLjM"
+    tags={["Web", "App", "API", "Desktop"]}
+    techStack={[
+      { src: csharpIcon, alt: "C#" },
+      { src: signalRIcon, alt: "SignalR" },
+      { src: rabbitMQIcon, alt: "Rabbit MQ" },
+      { src: tsIcon, alt: "TypeScript" },
+      { src: reactIcon, alt: "React" },
+      { src: xstateIcon, alt: "Xstate" },
+      { src: sqlIcon, alt: "SQL" },
+      { src: dockerIcon, alt: "Docker" },
+      { src: jenkinsIcon, alt: "Jenkins" },
+    ]}
+  />
+  <div class="divider my-0"></div>
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Projects at home 💻</div>
+  </div>
+
+  <HorizontalCardProject
+    title="Nand 2 Tetris"
+    img="/project-image.webp"
+    desc="A computer implementation starting with NAND gates and progressing to an assembler, compiler, a simple game to run on it and a sample OS lib."
+    url="https://github.com/lordviet/nand2tetris"
+    tags={["Artchitecture", "Compilers"]}
+    techStack={[
+      { src: assemblyIcon, alt: "Assembly" },
+      { src: csharpIcon, alt: "C#" },
+    ]}
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCardProject
+    title="Hyked"
+    img="/project-image.webp"
+    desc="A web app for coordinating shared travel plans. Powered by state machines, it efficiently manages each phase of the journey, ensuring a seamless user experience."
+    url="https://github.com/lordviet/hyked"
+    tags={["Web", "App", "API"]}
+    techStack={[
+      { src: csharpIcon, alt: "C#" },
+      { src: tsIcon, alt: "TypeScript" },
+      { src: reactIcon, alt: "React" },
+      { src: xstateIcon, alt: "Xstate" },
+      { src: sqlIcon, alt: "SQL" },
+    ]}
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCardProject
+    title="Cubex"
+    img="/project-image.webp"
+    desc="A fast-paced arcade game where you play as a cube, dodging obstacles and navigating through challenging worlds."
+    url="https://lordviet.itch.io/cubex"
+    tags={["Game"]}
+    techStack={[
+      { src: csharpIcon, alt: "C#" },
+      { src: unityIcon, alt: "Unity" },
+    ]}
+  />
+  <div class="divider my-0"></div>
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog ✍️</div>
+  </div>
+
+  {
+    last_posts.map((post) => (
+      <>
+        <HorizontalCard
+          title={post.data.title}
+          img={post.data.heroImage}
+          desc={post.data.description}
+          url={"/blog/" + createSlug(post.data.title, post.slug)}
+          target="_self"
+          badge={post.data.badge}
+          tags={post.data.tags}
+        />
+        <div class="divider my-0" />
+      </>
+    ))
+  }
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Talks 🎤</div>
+  </div>
+
+  <HorizontalCard
+    title=" Skustack Lens - Warehouse Visualization"
+    img="/lens-presentation-thumbnail.webp"
+    desc="We unveiled Skustack Lens at Sellercloud Connect 2024 in Bell Works, New Jersey, highlighting its advanced features and the algorithm driving warehouse visualization."
+    url="https://www.youtube.com/watch?v=EqUisc9pyBQ"
+    tags={["Presentation"]}
+  />
+</BaseLayout>
