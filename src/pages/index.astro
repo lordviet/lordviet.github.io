@@ -8,6 +8,7 @@ import HorizontalCardProject from "@components/HorizontalCardProject.astro";
 import assemblyIcon from "../assets/logos/assembly.svg";
 import rabbitMQIcon from "../assets/logos/rabbitmq.svg";
 import signalRIcon from "../assets/logos/signalr.svg";
+import nextIcon from "../assets/logos/nextjs.svg";
 import grafanaIcon from "../assets/logos/grafana.svg";
 import jenkinsIcon from "../assets/logos/jenkins.svg";
 import csharpIcon from "../assets/logos/c-sharp.svg";
@@ -107,6 +108,21 @@ const last_posts = posts.slice(0, 3);
   <div>
     <div class="text-3xl w-full font-bold mb-5 mt-10">Projects at home 💻</div>
   </div>
+
+  <HorizontalCardProject
+    title="Pixel Peek"
+    img="/project-image.webp"
+    desc="A movie guessing game where players identify films from small snippets of their posters. Test your cinematic knowledge in this engaging and challenging app."
+    url="https://pixel-peek.vercel.app/"
+    tags={["Web", "App", "Game"]}
+    techStack={[
+      { src: nextIcon, alt: "Next.js" },
+      { src: reactIcon, alt: "React" },
+      { src: tsIcon, alt: "TypeScript" },
+      { src: xstateIcon, alt: "Xstate" },
+    ]}
+  />
+  <div class="divider my-0"></div>
 
   <HorizontalCardProject
     title="Nand 2 Tetris"
